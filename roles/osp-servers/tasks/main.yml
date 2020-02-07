@@ -42,3 +42,4 @@
     timeout: 600
   delegate_to: "{{ inventory_hostname }}"
 
+
