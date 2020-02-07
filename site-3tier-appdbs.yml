@@ -1,0 +1,13 @@
+- hosts: workstation
+  gather_facts: false
+  roles:
+  - name: osp-facts
+
+- name: setup database tier
+  become: yes
+  gather_facts: true
+  hosts: appdbs
+  roles:
+    - {name: base-config, tags: base-config}
+   # - {name: db-tier, tags: [dbs, postgres]}
+    - {name: geerlingguy.postgresql, tags: [dbs, postgres]}

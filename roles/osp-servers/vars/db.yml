@@ -1,0 +1,6 @@
+---
+instance_name: db
+group: appdbs
+deployment: QA
+security_group_name: db
+flavor_name: m2.small

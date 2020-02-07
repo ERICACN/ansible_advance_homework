@@ -1,4 +1,22 @@
 - hosts: workstation
   become: yes
-  roles:
-    - osp-servers
+  tasks:
+   - name: Deploy app1
+     include_role:
+      name: osp-servers
+      vars_from: app1.yml
+
+   - name: Deploy app2
+     include_role:
+      name: osp-servers
+      vars_from: app2.yml
+
+   - name: Deploy frontend
+     include_role:
+      name: osp-servers
+      vars_from: frontend.yml
+   
+   - name: Deploy db
+     include_role:
+      name: osp-servers
+      vars_from: db.yml
